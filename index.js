@@ -36,6 +36,9 @@ async function fetchInfo() {
 			firstBoot = false
 			houseIds = [...info[0]]
 			houseInfo = [...info[1]]
+			subs.forEach(sub => {
+				bot.telegram.sendMessage(sub, "Just started up...")
+			})
 			return
 		}
 		else if(info[0].length >= houseIds.length) {
